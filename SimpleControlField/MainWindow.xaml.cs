@@ -28,10 +28,16 @@ namespace SimpleControlField
 
         private void ResetButtonClick(object sender, RoutedEventArgs e)
         {
-            var list = FindVisualChildren<CheckBox>(MainWindow1);
-            foreach (CheckBox checkBox in list)
+            var cbList = FindVisualChildren<CheckBox>(MainWindow1);
+            foreach (CheckBox checkBox in cbList)
             {
                 checkBox.IsChecked = false;
+            }
+
+            var txtboxList = FindVisualChildren<TextBox>(MainWindow1);
+            foreach (TextBox textBox in txtboxList)
+            {
+                textBox.Text = "";
             }
         }
 
