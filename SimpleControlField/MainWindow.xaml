@@ -5,8 +5,113 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleControlField"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" 
+        Name="MainWindow1"
+        Height="900" Width="525">
+    <Border Padding="10">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Margin="5">Add</Button>
+                <Button Grid.Column="1" Margin="5">Delete</Button>
+                <Button Grid.Column="2" Margin="5" Click="ResetButtonClick" >Reset</Button>
+            </Grid>
+
+
+            <TextBlock Margin="0,8,0,10" FontWeight="Bold">Main Properties</TextBlock>
+            <Label Content="Description:" Target="{Binding ElementName=Description}"></Label>
+            <TextBox Name="Description"></TextBox>
+
+            <Grid>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Label Content="Status" Target="{Binding ElementName=Status}"></Label>
+                    <TextBox Background="#eee" IsReadOnly="True" Margin="0,0,10,0" Name="Status"></TextBox>
+                </StackPanel>
+                <StackPanel  Grid.Column="1">
+                    <Label Content="Revision" Target="{Binding ElementName=Revision}"></Label>
+                    <TextBox Background="#eee" IsReadOnly="True"  Name="Revision"></TextBox>
+                </StackPanel>
+            </Grid>
+
+            <Label Content="Part Number" Target="{Binding ElementName=PartNumber}"></Label>
+            <TextBox Name="PartNumber" IsReadOnly="True"  Background="#eee"></TextBox>
+
+            <TextBlock Margin="0,8,0,10" FontWeight="Bold">Raw Properties</TextBlock>
+
+            <Label Content="Material" Target="{Binding ElementName=Material}"></Label>
+            <ComboBox SelectedIndex="0" Name="Material" Background="#eee">
+                <ComboBoxItem>Metal</ComboBoxItem>
+                <ComboBoxItem>Stone</ComboBoxItem>
+                <ComboBoxItem>Glass</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Margin="0,8,0,10" FontWeight="Bold">Manufacturing Info</TextBlock>
+            <TextBlock Margin="0,8,0,10" >Additional Production Options</TextBlock>
+            
+
+            <Grid>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <CheckBox>Weld</CheckBox>
+                    <CheckBox>Assembly</CheckBox>
+                    <CheckBox>Plasma</CheckBox>
+                    <CheckBox>Laser</CheckBox>
+                    <CheckBox>Purchase</CheckBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+                    <CheckBox>Lathe</CheckBox>
+                    <CheckBox>Drill</CheckBox>
+                    <CheckBox>Fold</CheckBox>
+                    <CheckBox>Roll</CheckBox>
+                    <CheckBox>Saw</CheckBox>
+                </StackPanel>
+            </Grid>
+
+            <Label Content="Length" Target="{Binding ElementName=Length}"></Label>
+            <TextBox Name="Length" ></TextBox>
+
+            <Label Content="Weight" Target="{Binding ElementName=Weight}"></Label>
+            <TextBox Name="Weight" IsReadOnly="True"  Background="#eee"></TextBox>
+
+            <Label Content="Finish" Target="{Binding ElementName=Finish}"></Label>
+            <ComboBox SelectedIndex="0" Name="Finish" Background="#eee">
+                <ComboBoxItem>Painted</ComboBoxItem>
+                <ComboBoxItem>Stone</ComboBoxItem>
+                <ComboBoxItem>Glass</ComboBoxItem>
+            </ComboBox>
+
+            <Label Content="Purchase Information" Target="{Binding ElementName=PurchaseInformation}"></Label>
+            <ComboBox SelectedIndex="0" Name="PurchaseInformation" Background="#eee">
+                <ComboBoxItem>Rubber</ComboBoxItem>
+                <ComboBoxItem>Stone</ComboBoxItem>
+                <ComboBoxItem>Glass</ComboBoxItem>
+            </ComboBox>
+
+            <Label Content="Supplier Name" Target="{Binding ElementName=SupplierName}"></Label>
+            <TextBox Name="SupplierName" ></TextBox>
+
+            <Label Content="Supplier Code" Target="{Binding ElementName=SupplierCode}"></Label>
+            <TextBox Name="SupplierCode" ></TextBox>
+
+            <TextBlock Margin="0,8,0,10" FontWeight="Bold">additional Info</TextBlock>
+            <TextBlock Margin="0,8,0,10" >Note</TextBlock>
+            <TextBlock Margin="0,8,0,10" >Painted</TextBlock>
+
+
+        </StackPanel>
+    </Border>
 </Window>
